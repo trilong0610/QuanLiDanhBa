@@ -1,4 +1,4 @@
-package com.example.huynh.danhba;
+package com.example.huynh.danhba.Adapter;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.huynh.danhba.Model.DanhBa;
+import com.example.huynh.danhba.R;
 
 import java.util.ArrayList;
 import java.util.List;

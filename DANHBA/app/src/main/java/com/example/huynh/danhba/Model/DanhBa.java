@@ -1,6 +1,5 @@
-package com.example.huynh.danhba;
+package com.example.huynh.danhba.Model;
 
-import android.content.ContentProvider;
 import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 
