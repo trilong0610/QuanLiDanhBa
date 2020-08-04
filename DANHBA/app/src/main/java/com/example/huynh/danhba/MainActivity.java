@@ -1,28 +1,20 @@
 package com.example.huynh.danhba;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.NativeActivity;
 import android.content.BroadcastReceiver;
 import android.content.ContentProviderOperation;
 import android.content.ContentResolver;
-import android.content.ContentUris;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.OperationApplicationException;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.RemoteException;
-import android.provider.Contacts;
 import android.provider.ContactsContract;
-import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.LoaderManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,24 +22,20 @@ import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
-import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.net.URI;
+import com.example.huynh.danhba.Adapter.DanhBaAdapter;
+import com.example.huynh.danhba.Adapter.DanhBaManager;
+
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
-
-import static android.provider.SyncStateContract.Columns.ACCOUNT_TYPE;
 
 public class MainActivity extends AppCompatActivity {
     private DanhBaManager danhBaManager;
@@ -268,16 +256,26 @@ public class MainActivity extends AppCompatActivity {
         if (sdt.length() == 11) { // dau so 84
             String dauSo = String.valueOf(sdt.charAt(0)) + String.valueOf(sdt.charAt(1)) + String.valueOf(sdt.charAt(2));
             Toast.makeText(getBaseContext(),dauSo,Toast.LENGTH_LONG).show();
-            if (dauSo.compareToIgnoreCase("848") == 0 || dauSo.compareToIgnoreCase("849") == 0 || dauSo.compareToIgnoreCase("843") == 0 || dauSo.compareToIgnoreCase("847") == 0 || dauSo.compareToIgnoreCase("845") == 0) {
-               return 1;
-            } else
+            if (dauSo.compareToIgnoreCase("848") == 0 ||
+                    dauSo.compareToIgnoreCase("849") == 0 ||
+                    dauSo.compareToIgnoreCase("843") == 0 ||
+                    dauSo.compareToIgnoreCase("847") == 0 ||
+                    dauSo.compareToIgnoreCase("845") == 0
+            )
+                return 1;
+            else
                 return 0;
 
 
         } else {
             if (sdt.length() == 10) { // dau so 0
                 String dauSo = String.valueOf(sdt.charAt(0) + String.valueOf(sdt.charAt(1)));
-                if (dauSo.compareToIgnoreCase("08") == 0 || dauSo.compareToIgnoreCase("09") == 0 || dauSo.compareToIgnoreCase("03") == 0 || dauSo.compareToIgnoreCase("07") == 0 || dauSo.compareToIgnoreCase("05") == 0) {
+                if (dauSo.compareToIgnoreCase("08") == 0 ||
+                        dauSo.compareToIgnoreCase("09") == 0 ||
+                        dauSo.compareToIgnoreCase("03") == 0 ||
+                        dauSo.compareToIgnoreCase("07") == 0 ||
+                        dauSo.compareToIgnoreCase("05") == 0)
+                {
                     return 1;
                 } else
                     return 0;
