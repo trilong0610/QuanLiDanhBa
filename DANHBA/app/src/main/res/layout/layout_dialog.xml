@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <EditText
+        android:id="@+id/ed_ten"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:background="@drawable/customedittext"
+        android:inputType="textPersonName"
+        android:hint="Nhập tên"/>
+
+    <EditText
+        android:id="@+id/ed_sdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:background="@drawable/customedittext"
+        android:inputType="textPersonName"
+        android:hint="Nhập số diên thoại" />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_them"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginRight="10sp"
+            android:background="@color/gray"
+            android:textColor="@color/white"
+            android:text="THÊM" />
+
+        <Button
+            android:id="@+id/btn_huy"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@color/gray"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10sp"
+            android:text="HỦY" />
+
+    </LinearLayout>
+</LinearLayout>
