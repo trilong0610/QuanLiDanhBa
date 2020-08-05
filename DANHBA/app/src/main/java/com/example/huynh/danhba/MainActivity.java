@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         checkAndRequestPermissions();
         HaiActivity hai = new HaiActivity(this);
-        final Intent intent = new Intent(this, Call.class);
+
         //checkPer();
         AnhXa();
 
@@ -163,10 +163,12 @@ public class MainActivity extends AppCompatActivity {
         btncall.setOnClickListener(new View.OnClickListener() { // Sai ở đây nè
             // goi activity ban phim
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Call.class);
                 startActivity(intent);
             }
         });
+
         setadapter();
 
 
