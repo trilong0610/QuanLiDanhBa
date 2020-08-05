@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private DanhBaAdapter danhBaAdapter;
     private EditText edittim;
     private Cursor cursor;
-    private Button btthem1, btngoi, btnnhantin;
+    private Button btthem1, btngoi, btnnhantin,btncall;
     private Uri contactsListUri = ContactsContract.Contacts.CONTENT_URI;
     private String upNumber;
 
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         checkAndRequestPermissions();
         HaiActivity hai = new HaiActivity(this);
-
+        final Intent intent = new Intent(this, Call.class);
         //checkPer();
         AnhXa();
 
@@ -124,6 +124,8 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+
         listviewdanhba.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
@@ -158,7 +160,13 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+        btncall.setOnClickListener(new View.OnClickListener() { // Sai ở đây nè
+            // goi activity ban phim
+            @Override
+            public void onClick(View v) {
+                startActivity(intent);
+            }
+        });
         setadapter();
 
 
@@ -345,6 +353,7 @@ public class MainActivity extends AppCompatActivity {
 
         btthem1 = findViewById(R.id.btnthem1);
         edittim = findViewById(R.id.editsearch);
+        btncall = findViewById(R.id.btncall);
 
         //danhBaList=new ArrayList<>();
 

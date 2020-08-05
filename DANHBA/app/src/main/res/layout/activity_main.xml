@@ -42,16 +42,31 @@
         </ListView>
 
         <Button
-            android:id="@+id/btnthem1"
+        android:id="@+id/btnthem1"
+        android:layout_width="70sp"
+        android:layout_height="70sp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="right"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="290sp"
+        android:background="@drawable/mau"
+        android:drawablePadding="20sp"
+        android:drawableRight="@drawable/add"
+        android:paddingRight="20sp"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btncall"
             android:layout_width="70sp"
             android:layout_height="70sp"
             android:layout_alignParentBottom="true"
             android:layout_gravity="right"
+            android:layout_marginLeft="50sp"
             android:layout_marginBottom="32dp"
-            android:layout_marginLeft="290sp"
             android:background="@drawable/mau"
+            android:drawableRight="@drawable/keyboard"
             android:drawablePadding="20sp"
-            android:drawableRight="@drawable/add"
             android:paddingRight="20sp"
             android:textSize="40sp"
             android:textStyle="bold" />
